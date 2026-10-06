@@ -1,0 +1,22 @@
+# ── All tuneable numbers live here. No hardcoding in Python. ──
+
+population:
+  num_seniors: 100
+  min_age: 60
+  max_age: 85
+  simulation_days: 30
+
+normal_payments:
+  avg_per_senior_per_month: 20       # bills, groceries, family
+  typical_amount_min: 100
+  typical_amount_max: 15000
+  large_genuine_amount_max: 80000    # occasional big genuine (medical, family)
+  pct_payments_above_50k: 5          # ~5% of genuine payments exceed 50k
+  emergency_payment_rate: 0.02       # fraction that are genuine emergencies
+
+digital_arrest_scam:
+  pct_seniors_targeted: 10           # 10% of seniors hit
+  loss_amount_min: 500000            # 5 lakh
+  loss_amount_max: 5000000           # 50 lakh
+  channel: "RTGS"
+  to_new_payee: true
