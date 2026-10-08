@@ -20,3 +20,12 @@ digital_arrest_scam:
   loss_amount_max: 5000000           # 50 lakh
   channel: "RTGS"
   to_new_payee: true
+
+rules:
+  everyday_cap: 500000
+  large_threshold: 50000
+  timelock_hours: 48
+  age_cutoff: 70
+  velocity_count: 3
+  velocity_window_hours: 24
+  trusted_person_response_minutes: 30

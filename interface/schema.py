@@ -20,6 +20,11 @@ class Transaction:
     account: str          # "everyday" | "vault" | "FD"
     velocity_24h: int
     fd_just_broken: bool
+    payee_type: str       # "individual" | "merchant"
+    call_origin: str      # "none" | "domestic" | "international" | "spoofed" | "flagged"
+    is_vault_release: bool
+    is_emergency: bool
+    payee_preapproved: bool
 
 
 # ── Hidden truth labels — engine must NEVER see these ────────────────

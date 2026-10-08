@@ -60,7 +60,9 @@ def build_stream(normal_df: pd.DataFrame, scam_df: pd.DataFrame) -> pd.DataFrame
 TRANSACTION_COLS = [
     "txn_id", "customer_id", "age", "amount", "channel",
     "payee_id", "payee_is_new", "timestamp", "account",
-    "velocity_24h", "fd_just_broken",
+    "velocity_24h", "fd_just_broken", "payee_type",
+    "call_origin", "is_vault_release", "is_emergency",
+    "payee_preapproved",
 ]
 
 # ── Hidden label columns ─────────────────────────────────────────────

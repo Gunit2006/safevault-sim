@@ -58,9 +58,13 @@ def inject_scams(normal_df: pd.DataFrame, params: dict, seed: int = 99) -> pd.Da
             ),
             "account": "everyday",      # victims typically pay from everyday account
             "fd_just_broken": False,
+            "payee_type": "individual", # scammers usually pose as individuals or officials
+            "call_origin": random.choices(["none", "spoofed", "flagged", "international"], weights=[45, 25, 20, 10])[0],
+            "is_vault_release": False,
+            "is_emergency": False,
+            "payee_preapproved": False,
             "is_fraud": True,
             "coercion_active": True,
-            "is_emergency": False,
         })
 
     return pd.DataFrame(rows)

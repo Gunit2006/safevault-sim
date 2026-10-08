@@ -97,9 +97,13 @@ def generate_seniors(params: dict, seed: int = 42) -> pd.DataFrame:
                 "timestamp": _random_timestamp(start, end),
                 "account": account,
                 "fd_just_broken": account == "FD",   # FD account ⇒ FD was broken
+                "payee_type": random.choices(["individual", "merchant"], weights=[40, 60])[0],
+                "call_origin": random.choices(["none", "domestic"], weights=[97, 3])[0],
+                "is_vault_release": account == "vault",
+                "is_emergency": is_emergency,
+                "payee_preapproved": random.random() < 0.1,
                 "is_fraud": False,
                 "coercion_active": False,
-                "is_emergency": is_emergency,
             })
 
     return pd.DataFrame(rows)
