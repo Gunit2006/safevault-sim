@@ -81,10 +81,11 @@ def generate_seniors(params: dict, seed: int = 42) -> pd.DataFrame:
             else:
                 payee_id = random.choice(known_payees[cid])
 
-            # Account type: mostly everyday, some vault
-            account = random.choices(
-                ["everyday", "vault", "FD"], weights=[75, 20, 5]
-            )[0]
+            # Account type: routine payments use everyday; large payments can use vault/FD
+            if is_large:
+                account = random.choices(["everyday", "vault", "FD"], weights=[40, 40, 20])[0]
+            else:
+                account = "everyday"
 
             rows.append({
                 "txn_id": f"TXN-{uuid.uuid4().hex[:12]}",
