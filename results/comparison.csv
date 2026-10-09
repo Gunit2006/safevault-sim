@@ -1,0 +1,7 @@
+Policy,Fraud Value Blocked (%),Genuine Delayed (%),Emergencies Failed (Count)
+B0,0.0,0.0,0
+B1,53.83,5.02,0
+Integrated,93.6,7.56,2
+Integrated_minus_safety,76.97,5.13,0
+Integrated_minus_vault,91.37,5.54,2
+Integrated_minus_emergency,93.6,5.64,2
